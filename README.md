@@ -40,3 +40,14 @@ Name | Value | Example | Description
 clean_interval_sec | integer | 1 | number of seconds between archive purges
 max_retention_minutes | integer | 60 | oldest log record allowed in archive
 new_message_count | integer | 5 | number of past messages to send when a client subscribes
+
+# lager configuration
+Add lager_websocket as a lager handler. The only parameter is the starting
+log level.
+```
+lager, [
+        {handlers, [
+                    {lager_websocket, debug}
+                   ]}
+       ]}
+```
